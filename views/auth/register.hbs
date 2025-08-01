@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+<h2>Register</h2>
+<form action="/users/register" method="POST">
+  {{#each errors}}<p class="error">{{this.msg}}</p>{{/each}}
+  <input type="text" name="username" placeholder="Username" value="{{username}}" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <input type="password" name="password2" placeholder="Confirm Password" required>
+  <button type="submit">Register</button>
+</form>
+<p class="authfooter">Already have an account? <a href="/users/login">Login</a></p>

@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+
+
+<h2>My Notes</h2>
+
+<a href="/notes/add" class="btn btn-primary mb-3">Add Note</a>
+
+{{#if notes.length}}
+  <ul class="list-group">
+    {{#each notes}}
+      <li class="list-group-item">
+        <strong>{{this.title}}</strong>
+        <div>
+          <a href="/notes/edit/{{this._id}}" class="btn btn-sm btn-warning">Edit</a>
+
+          <form action="/notes/{{this._id}}?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No notes yet.</p>
+{{/if}}
+

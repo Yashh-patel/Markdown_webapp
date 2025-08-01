@@ -1,0 +1,9 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+<h2>Login</h2>
+<form action="/users/login" method="POST">
+  {{#each errors}}<p class="error">{{this.msg}}</p>{{/each}}
+  <input type="text" name="username" placeholder="Username" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+<p class="authfooter">Don't have an account? <a href="/users/register">Register</a></p>
